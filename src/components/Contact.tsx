@@ -82,7 +82,7 @@ const Contact: React.FC = () => {
                     <span>contact@example.com</span>
                   </a>
                   <a
-                    href="https://github.com/"
+                    href="https://github.com/jazzshu"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center text-slate-light hover:text-accent transition-colors"
@@ -91,22 +91,13 @@ const Contact: React.FC = () => {
                     <span>GitHub</span>
                   </a>
                   <a
-                    href="https://linkedin.com/in/"
+                    href="https://www.linkedin.com/in/jasonshuyinta/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center text-slate-light hover:text-accent transition-colors"
                   >
                     <Linkedin size={20} className="mr-3" />
                     <span>LinkedIn</span>
-                  </a>
-                  <a
-                    href="https://twitter.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-slate-light hover:text-accent transition-colors"
-                  >
-                    <Twitter size={20} className="mr-3" />
-                    <span>Twitter</span>
                   </a>
                 </div>
               </div>

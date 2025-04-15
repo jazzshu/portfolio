@@ -1,6 +1,5 @@
-
 import React from "react";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -10,7 +9,7 @@ const Footer: React.FC = () => {
           <div className="mb-6 md:mb-0">
             <a href="#" className="text-xl font-bold flex items-center">
               <span className="font-mono text-accent mr-1">&lt;</span>
-              <span>Marco</span>
+              <span>Jason</span>
               <span className="font-mono text-accent ml-1">/&gt;</span>
             </a>
             <p className="text-slate-light mt-2 max-w-xs">
@@ -21,7 +20,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row md:space-x-12 items-center">
             <div className="flex space-x-6 text-slate-light mb-6 md:mb-0">
               <a 
-                href="https://github.com/" 
+                href="https://github.com/jazzshu" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
@@ -29,20 +28,12 @@ const Footer: React.FC = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com/in/" 
+                href="https://www.linkedin.com/in/jasonshuyinta/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
               >
                 <Linkedin size={20} />
-              </a>
-              <a 
-                href="https://twitter.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-accent transition-colors"
-              >
-                <Twitter size={20} />
               </a>
               <a 
                 href="mailto:contact@example.com"
@@ -55,7 +46,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-navy mt-8 pt-8 text-center text-slate-light text-sm">
-          <p>© {new Date().getFullYear()} Marco. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Jason. All rights reserved.</p>
           <p className="mt-1">
             Built with{" "}
             <span className="text-accent">React</span> &{" "}

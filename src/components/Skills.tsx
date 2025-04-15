@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   Code,
@@ -9,6 +10,7 @@ import {
   Terminal,
   Github,
   Cloud,
+  MessageSquare,
 } from "lucide-react";
 
 interface SkillCategoryProps {
@@ -56,6 +58,11 @@ const Skills: React.FC = () => {
       icon: <Server size={24} />,
       title: "Backend & Infrastructure",
       skills: ["Spring Boot", "Microservices", "REST APIs", "RabbitMQ", "Kafka"],
+    },
+    {
+      icon: <MessageSquare size={24} />,
+      title: "Message Brokers & Streaming",
+      skills: ["Apache Artemis", "Apache Pulsar", "Apache Kafka", "Distributed Messaging"],
     },
     {
       icon: <Github size={24} />,
