@@ -10,55 +10,117 @@ interface ExperienceItemProps {
   date: string;
   location: string;
   descriptions: string[];
+  techStack?: string[];
 }
 
 const experiences: ExperienceItemProps[] = [
   {
-    id: "switzerland",
-    role: "Senior Cloud Engineer",
-    company: "Swiss Tech Company",
+    id: "swiss",
+    role: "Cloud Backend Engineer",
+    company: "Swiss AviationSoftware",
     date: "2023 - Present",
     location: "Switzerland",
     descriptions: [
-      "Design and implement scalable Kubernetes clusters for enterprise applications",
-      "Develop and maintain Helm charts for streamlined application deployment",
-      "Architect CI/CD pipelines using GitLab CI for automated testing and deployment",
-      "Lead infrastructure-as-code initiatives using Terraform and AWS CloudFormation",
-      "Implement observability solutions with Prometheus, Grafana, and ELK stack",
+      "Design and implement cloud-native solutions using Kubernetes and GKE",
+      "Develop and maintain Helm charts for application deployment",
+      "Architect CI/CD pipelines using GitLab CI",
+      "Work with message brokers like ActiveMQ Artemis",
+      "Implement monitoring solutions with Grafana",
+    ],
+    techStack: [
+      "Kubernetes / GKE",
+      "Docker",
+      "Helm",
+      "Linux",
+      "GitLab",
+      "Spring",
+      "ActiveMQ Artemis",
+      "Google Cloud Platform",
+      "Keycloak",
+      "Grafana"
     ],
   },
   {
-    id: "milan",
-    role: "Cloud Backend Developer",
-    company: "Milan Tech",
+    id: "accenture",
+    role: "Backend Developer",
+    company: "Accenture",
     date: "2022 - 2023",
     location: "Milan, Italy",
     descriptions: [
-      "Developed and maintained microservices using Spring Boot and Java",
-      "Containerized applications with Docker and deployed to Kubernetes",
-      "Implemented CI/CD pipelines with GitLab CI",
-      "Collaborated with cross-functional teams to design and deploy cloud-native applications",
-      "Managed AWS cloud resources including EC2, S3, and RDS",
+      "Developed backend services using Java and Spring Boot",
+      "Worked with MongoDB and SQL Server databases",
+      "Implemented monitoring using Dynatrace and ELK stack",
+      "Maintained CI/CD pipelines with Jenkins and Azure DevOps",
+    ],
+    techStack: [
+      "Java 8",
+      "Spring Boot",
+      "Spring MVC",
+      "MongoDB",
+      "SQL Server",
+      "Maven",
+      "Hibernate",
+      "Dynatrace",
+      "ELK stack",
+      "Swagger",
+      "Mockito",
+      "SonarQube",
+      "Bitbucket",
+      "Jenkins",
+      "Jira",
+      "Azure DevOps"
     ],
   },
   {
-    id: "bologna",
-    role: "Junior Backend Developer",
-    company: "Bologna Systems",
+    id: "capgemini",
+    role: "Backend Developer",
+    company: "Capgemini",
     date: "2021 - 2022",
     location: "Bologna, Italy",
     descriptions: [
-      "Developed REST APIs using Java Spring Boot",
-      "Collaborated on the design and implementation of microservices",
-      "Participated in code reviews and implemented best practices",
-      "Worked with Docker containers for local development",
-      "Assisted in maintaining CI/CD pipelines",
+      "Developed and maintained Java-based backend services",
+      "Worked with Spring Boot and Spring MVC frameworks",
+      "Implemented RESTful APIs with Swagger documentation",
+      "Managed build processes with Maven and Gradle",
     ],
+    techStack: [
+      "Java 8",
+      "Java 11",
+      "JPA",
+      "Spring MVC",
+      "Spring Boot",
+      "Maven",
+      "Gradle",
+      "Swagger",
+      "Hibernate",
+      "SonarQube",
+      "JavaScript",
+      "React JS",
+      "Git",
+      "Jenkins",
+      "Jira",
+      "Trello",
+      "MySQL"
+    ],
+  },
+  {
+    id: "cineca",
+    role: "Web Developer",
+    company: "Cineca",
+    date: "2021",
+    location: "Bologna, Italy",
+    descriptions: [
+      "Developed web applications using PHP",
+      "Worked on frontend and backend integration",
+      "Collaborated with cross-functional teams",
+      "Participated in code reviews and implementation of best practices",
+    ],
+    techStack: ["PHP", "Web Development"],
   },
 ];
 
 const Experience: React.FC = () => {
-  const [activeTab, setActiveTab] = React.useState("switzerland");
+  const [activeTab, setActiveTab] = React.useState("swiss");
 
   return (
     <section id="experience" className="py-20 bg-white dark:bg-navy-dark">
@@ -67,12 +129,12 @@ const Experience: React.FC = () => {
 
         <div className="mt-12">
           <Tabs
-            defaultValue="switzerland"
+            defaultValue="swiss"
             value={activeTab}
             onValueChange={setActiveTab}
             className="max-w-3xl mx-auto"
           >
-            <TabsList className="grid w-full grid-cols-3">
+            <TabsList className="grid w-full grid-cols-4">
               {experiences.map((exp) => (
                 <TabsTrigger key={exp.id} value={exp.id}>
                   {exp.company}
@@ -110,6 +172,24 @@ const Experience: React.FC = () => {
                     </li>
                   ))}
                 </ul>
+
+                {exp.techStack && (
+                  <div className="mt-4">
+                    <h4 className="text-sm font-semibold text-navy-dark dark:text-white mb-2">
+                      Technologies Used:
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.techStack.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 text-xs rounded bg-navy/10 dark:bg-navy text-navy-dark dark:text-slate-light"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </TabsContent>
             ))}
           </Tabs>

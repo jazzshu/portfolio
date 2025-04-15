@@ -1,11 +1,10 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
 const Hero: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center pt-16 pb-16 relative bg-gradient-to-br from-white to-blue-50 dark:from-navy-dark dark:to-navy">
+    <section className="min-h-screen flex items-center pt-16 pb-16 relative bg-gradient-to-br from-navy-dark to-navy-light">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]"></div>
       </div>
@@ -17,10 +16,10 @@ const Hero: React.FC = () => {
               <p className="font-mono text-accent animate-fade-in-up [animation-delay:0.1s] opacity-0">
                 Hi, my name is
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-dark dark:text-white animate-fade-in-up [animation-delay:0.3s] opacity-0">
-                Marco
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white animate-fade-in-up [animation-delay:0.3s] opacity-0">
+                Jason
               </h1>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate dark:text-slate-light animate-fade-in-up [animation-delay:0.5s] opacity-0">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-light animate-fade-in-up [animation-delay:0.5s] opacity-0">
                 I build cloud infrastructure.
               </h2>
               <p className="text-slate max-w-md animate-fade-in-up [animation-delay:0.7s] opacity-0">

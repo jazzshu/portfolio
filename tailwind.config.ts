@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -68,17 +67,17 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				navy: {
-					light: "#172A45",
-					DEFAULT: "#0A192F",
-					dark: "#020C1B",
+					light: "#1a2f4e",
+					DEFAULT: "#0d1b2a",
+					dark: "#061018",
 				},
 				accent: {
-					DEFAULT: "#64FFDA",
-					dark: "#52D6BC",
+					DEFAULT: "#64ffda",
+					dark: "#4ad3b3",
 				},
 				slate: {
-					light: "#A8B2D1",
-					DEFAULT: "#8892B0",
+					light: "#ccd6f6",
+					DEFAULT: "#8892b0",
 					dark: "#495670",
 				},
 			},
