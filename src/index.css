@@ -1,10 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 33% 99%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -13,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -22,7 +25,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 171.8 100% 68.0%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -70,8 +66,8 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 171.8 100% 68.0%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -98,4 +94,54 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.section-heading {
+  @apply text-2xl md:text-3xl font-semibold text-navy-dark relative pb-2 mb-8;
+}
+
+.section-heading::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-24 h-1 bg-accent;
+}
+
+.highlight {
+  @apply text-accent font-mono font-normal;
+}
+
+.numbered-heading {
+  @apply flex items-center text-2xl font-semibold;
+}
+
+.numbered-heading::before {
+  @apply font-mono text-accent mr-2 text-xl font-normal;
+}
+
+.numbered-heading::after {
+  @apply h-px bg-slate ml-4 w-full max-w-[300px];
+  content: '';
+}
+
+.numbered-heading:nth-of-type(1)::before {
+  content: '01.';
+}
+
+.numbered-heading:nth-of-type(2)::before {
+  content: '02.';
+}
+
+.numbered-heading:nth-of-type(3)::before {
+  content: '03.';
+}
+
+.numbered-heading:nth-of-type(4)::before {
+  content: '04.';
+}
+
+.numbered-heading:nth-of-type(5)::before {
+  content: '05.';
+}
+
+.tech-tag {
+  @apply bg-navy-light text-white px-3 py-1 rounded text-sm mr-2 mb-2 inline-block;
 }
