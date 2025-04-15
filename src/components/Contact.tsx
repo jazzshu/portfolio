@@ -1,9 +1,8 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, GitHub, Linkedin, Twitter } from "lucide-react";
+import { Mail, Github, Linkedin, Twitter } from "lucide-react";
 
 const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -88,7 +87,7 @@ const Contact: React.FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center text-slate-light hover:text-accent transition-colors"
                   >
-                    <GitHub size={20} className="mr-3" />
+                    <Github size={20} className="mr-3" />
                     <span>GitHub</span>
                   </a>
                   <a

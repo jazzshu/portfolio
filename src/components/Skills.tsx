@@ -1,7 +1,6 @@
-
 import React from "react";
 import {
-  Java,
+  Code,
   GraduationCap,
   Container,
   CircleDollarSign,
