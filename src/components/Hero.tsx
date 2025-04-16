@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
             <div className="relative">
               <div className="absolute inset-0 border-2 border-accent rounded translate-x-4 translate-y-4 z-0"></div>
               <img
-                src="/lovable-uploads/ghibliphoto.png"
+                src={`${import.meta.env.BASE_URL}lovable-uploads/ghibliphoto.png`}
                 alt="Profile"
                 className="w-60 h-60 sm:w-72 sm:h-72 object-cover rounded z-10 relative"
               />
