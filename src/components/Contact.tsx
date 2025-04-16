@@ -3,12 +3,41 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { useState, useEffect } from 'react';
 
 const Contact: React.FC = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const API_GATEWAY = 'https://8dd0w7zsl6.execute-api.eu-central-1.amazonaws.com/sendEmail'
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+  
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // This would connect to a backend service in a real application
-    console.log("Form submitted!");
+    try {
+      const response = await fetch(
+        API_GATEWAY,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        }
+      );
+  
+      if (!response.ok) throw new Error('Network error');
+      console.log('Message sent!');
+      // optionally reset form
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Submit error:', error);
+    }
   };
 
   return (
@@ -29,6 +58,9 @@ const Contact: React.FC = () => {
                 <Input
                   type="text"
                   placeholder="Name"
+                  id="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   required
                   className="bg-slate-50 dark:bg-navy-light border-slate-200 dark:border-navy"
                 />
@@ -38,6 +70,9 @@ const Contact: React.FC = () => {
                   type="email"
                   placeholder="Email"
                   required
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="bg-slate-50 dark:bg-navy-light border-slate-200 dark:border-navy"
                 />
               </div>
@@ -46,6 +81,9 @@ const Contact: React.FC = () => {
                   type="text"
                   placeholder="Subject"
                   required
+                  id="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="bg-slate-50 dark:bg-navy-light border-slate-200 dark:border-navy"
                 />
               </div>
@@ -53,6 +91,9 @@ const Contact: React.FC = () => {
                 <Textarea
                   placeholder="Message"
                   required
+                  rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
                   className="min-h-[120px] bg-slate-50 dark:bg-navy-light border-slate-200 dark:border-navy"
                 />
               </div>
