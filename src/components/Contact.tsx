@@ -75,11 +75,11 @@ const Contact: React.FC = () => {
                 
                 <div className="space-y-4">
                   <a
-                    href="mailto:contact@example.com"
+                    href="mailto:jasonshuyinta@gmail.com"
                     className="flex items-center text-slate-light hover:text-accent transition-colors"
                   >
                     <Mail size={20} className="mr-3" />
-                    <span>contact@example.com</span>
+                    <span>jasonshuyinta@gmail.com</span>
                   </a>
                   <a
                     href="https://github.com/jazzshu"

@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
             className="text-xl font-bold text-navy-dark dark:text-white flex items-center"
           >
             <span className="font-mono text-accent mr-1">&lt;</span>
-            <span>Marco</span>
+            <span>jazzshu</span>
             <span className="font-mono text-accent ml-1">/&gt;</span>
           </a>
 
@@ -58,14 +58,6 @@ const Navbar: React.FC = () => {
                 <span>{item.name}</span>
               </a>
             ))}
-            <a
-              href="/resume.pdf"
-              className="px-4 py-2 border border-accent text-accent rounded hover:bg-accent/10 transition-colors duration-300"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Resume
-            </a>
           </nav>
 
           {/* Mobile Navigation Toggle */}
